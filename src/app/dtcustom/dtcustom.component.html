@@ -1,0 +1,23 @@
+<p>
+  dtcustom table
+</p>
+<div *ngIf="userData">
+  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th># Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr appDtrow (selectedValue)="selectedValue($event)" *ngFor=" let rec of userData">
+        <td>{{rec.id}}</td>
+        <td>{{rec.firstName}}</td>
+        <td>{{rec.lastName}}</td>
+        <td>{{rec.noClicks}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
